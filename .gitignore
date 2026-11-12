@@ -1,1 +1,6 @@
 node_modules
+
+# Private environment files
+.env
+.env.*
+!.env.example

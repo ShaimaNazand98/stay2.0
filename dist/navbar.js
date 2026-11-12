@@ -1,9 +1,14 @@
+//1. page loads, the menu is hidden by default (because the CSS will hide it with the 'active'.
+//2. user clicks hambuger icon -> active class gets added to navLinks -> css shows menu 
+//3. user clicks hamburger menu again -> active class gets removed from navLinks -> css hides menu again>
 export function initNavbar() {
+    //goes into html and finds element with id="hamburger" and id="nav-links"
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    if (hamburger && navLinks) {
+    //
+    if (hamburger && navLinks) { //continue IF only BOTH elements exists in the html, otherwise log an error
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('active'); //this basically means "if the navLinks element has the class 'active', remove it, otherwise add it", like showing and hiding the menu when the hamburger is clicked.
         });
     }
     else {

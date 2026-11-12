@@ -8,9 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { initNavbar } from "./navbar.js";
+//GET - function that fetches the hotel ID from the page the user is on and sends a request to the server to get all the details about that hotel, which it then renders/displays on the page.
+//this function is saying "look at the URL, find the id number and return it. To return means either give back value or end the function and exit. If there is no id in the URL, return null."
 function getHotelId() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');
+    const params = new URLSearchParams(window.location.search); //window.location is URL of the current page. search is what comes after the ? in the URL. ?id=2 is called a query parameter.URLSearchParams makes it easy to read query parameters for the current page.
+    return params.get('id'); //params.get("id") grabs the ?id=2 part of URL, depending on the page, it could be 1, 2 ,3 etc, if no id returns null
 }
 let isEditing = false;
 function saveHotel(hotel) {
@@ -49,7 +51,7 @@ function saveHotel(hotel) {
 function deleteFacility(hotel, facilityToRemove) {
     return __awaiter(this, void 0, void 0, function* () {
         const encoded = encodeURIComponent(facilityToRemove);
-        // encodeURIComponent() makes the facility name safe to put in a URL.
+        // encodeURIComponent() converts special characters in the facility name into URL-friendly format, for example spaces become %20, and characters like ø, æ, å are also encoded so they dont break the URL if not the url would be invalid and the request would fail.
         // For example "Felles kjøkken - Vaskeri" becomes "Felles%20kj%C3%B8kken%20-%20Vaskeri"
         // so special characters like spaces, ø, æ, å and dashes don't break the URL.
         const response = yield fetch(`http://localhost:4000/api/hotels/${hotel.id}/facilities?facility=${encoded}`, { method: "DELETE" });
@@ -316,3 +318,6 @@ function loadHotel() {
 }
 document.addEventListener("DOMContentLoaded", loadHotel);
 document.addEventListener("DOMContentLoaded", initNavbar);
+//  DOM(document object model) is responsible for rendering/displaying thr HTML elements like text, images, divs, buttons etc on the page, 
+// then it lets us interact with those elements in JS safely after they are loaded,
+//  if not it will crash and we will get errors because JS will try to find elements that are not yet rendered on the page.

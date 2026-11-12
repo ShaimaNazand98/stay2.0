@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "server": "ts-node server.ts",
-    "client": "serve .",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
+  "client": "serve .",
+  "dev": "npm run client"
+},
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
