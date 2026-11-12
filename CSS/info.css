@@ -1,3 +1,4 @@
+/* SHAIMA NAZAND */
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +37,7 @@ body {
 }
 
 img {
-    border-radius: 20px;
+    border-radius: 10px;
 
 }
 
@@ -50,8 +51,8 @@ img {
 
 .hero-image img {
     width: 100%;
-    max-width: 330px;
-    height: auto;
+    max-width: 630px;
+    height: 350px;
     margin-top: 30px;
     object-fit: cover;
 }
@@ -241,7 +242,7 @@ h2 {
     transform: scale(1.3);
 }
 
-/* ── Facilities delete button ── */
+
 
 .facility-item {
     display: flex;
@@ -267,7 +268,7 @@ h2 {
     transform: scale(1.3);
 }
 
-/* ── Reviews ── */
+
 
 .reviews {
     margin-top: 2.5rem;

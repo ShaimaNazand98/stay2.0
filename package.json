@@ -1,11 +1,15 @@
+
 {
   "name": "stay",
   "version": "1.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
-  "client": "serve .",
-  "dev": "npm run client"
-},
+    "client": "vite --host",
+    "dev": "npm run client",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
@@ -16,30 +20,15 @@
     "typescript": "^6.0.3",
     "vite": "^8.0.8"
   },
-  "description": "Bed and Breakfast",
-  "main": "main.js",
   "dependencies": {
     "cors": "^2.8.6",
-    "detect-libc": "^2.1.2",
-    "express": "^5.2.1",
-    "fdir": "^6.5.0",
-    "lightningcss": "^1.32.0",
-    "lightningcss-win32-x64-msvc": "^1.32.0",
-    "nanoid": "^3.3.11",
-    "picocolors": "^1.1.1",
-    "picomatch": "^4.0.4",
-    "postcss": "^8.5.9",
-    "rolldown": "^1.0.0-rc.15",
-    "source-map-js": "^1.2.1",
-    "tinyglobby": "^0.2.16"
+    "express": "^5.2.1"
   },
+  "description": "Bed and Breakfast",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HakonBergtun/stay.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/HakonBergtun/stay/issues"
   },
